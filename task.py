@@ -4,16 +4,26 @@ the value from SQS and prints it to the stdout. Ideally,A reader could be deploy
 AWS.'''
 
 import random
-min = 1
-max = 6
-roll_dice = "Yes" or "yes" or "Y" or "y"
-while roll_dice == "Yes" or "yes" or "Y" or "y":
-	print("Rolling the dices ")
-	print("The values are  ")
-	print(random.randint(min,max))
-	print(random.randint(min,max))
+ 
+try:
+    min_dice = 1
+    max_dice = 6
+except:
+    print('Input invalid program will revert to defaults.')
 
-
-	roll_again = input("Roll the dices again: ")
-
-
+    #Sender
+    file = open("dice.txt",'r')
+    
+   
+again = True
+ 
+while again:
+ 
+    print(random.randint(min_dice, max_dice))
+ 
+    dice_again = input('Want to roll the dice again? ')
+ 
+    if dice_again.lower() == 'yes' or dice_again.lower() == 'y' or dice_again.upper() == "Yes" or dice_again.upper() == "Y":
+        continue
+    else:
+        break
