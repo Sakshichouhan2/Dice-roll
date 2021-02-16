@@ -11,9 +11,6 @@ try:
 except:
     print('Input invalid program will revert to defaults.')
 
-    #Sender
-    file = open("dice.txt",'r')
-    
    
 again = True
  
@@ -25,5 +22,7 @@ while again:
  
     if dice_again.lower() == 'yes' or dice_again.lower() == 'y' or dice_again.upper() == "Yes" or dice_again.upper() == "Y":
         continue
-    else:
-        break
+    elif dice_again.lower() == 'no' or dice_again.lower() == 'n' or dice_again.upper() == "No" or dice_again.upper() == "N":
+    	exit()
+ 	
+    
